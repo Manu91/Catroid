@@ -78,7 +78,7 @@ public class NewVariableDialog extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle bundle) {
 		final View dialogView = LayoutInflater.from(getActivity()).inflate(
-				R.layout.dialog_formula_editor_variable_name, null);
+				R.layout.dialog_formula_editor_data_name, null);
 
 		final Dialog dialogNewVariable = new AlertDialog.Builder(getActivity()).setView(dialogView)
 				.setTitle(R.string.formula_editor_variable_dialog_title)
@@ -119,16 +119,16 @@ public class NewVariableDialog extends DialogFragment {
 
 	private void handleOkButton(View dialogView) {
 		EditText variableNameEditText = (EditText) dialogView
-				.findViewById(R.id.dialog_formula_editor_variable_name_edit_text);
+				.findViewById(R.id.dialog_brick_editor_edit_element_edit_text);
 		RadioButton localVariable = (RadioButton) dialogView
-				.findViewById(R.id.dialog_formula_editor_variable_name_local_variable_radio_button);
+				.findViewById(R.id.dialog_formula_editor_data_name_local_variable_radio_button);
 		RadioButton globalVariable = (RadioButton) dialogView
-				.findViewById(R.id.dialog_formula_editor_variable_name_global_variable_radio_button);
+				.findViewById(R.id.dialog_formula_editor_data_name_global_variable_radio_button);
 
 		String variableName = variableNameEditText.getText().toString();
 		UserVariable newUserVariable = null;
 		if (globalVariable.isChecked()) {
-			if (ProjectManager.getInstance().getCurrentProject().getUserVariables()
+			/*if (ProjectManager.getInstance().getCurrentProject().getUserVariables()
 					.getUserVariable(variableName, ProjectManager.getInstance().getCurrentSprite()) != null) {
 
 				Toast.makeText(getActivity(), R.string.formula_editor_existing_variable, Toast.LENGTH_LONG).show();
@@ -139,7 +139,7 @@ public class NewVariableDialog extends DialogFragment {
 			}
 		} else if (localVariable.isChecked()) {
 			newUserVariable = ProjectManager.getInstance().getCurrentProject().getUserVariables()
-					.addSpriteUserVariable(variableName);
+					.addSpriteUserVariable(variableName);*/
 		}
 		variableDialogListenerListFinishNewVariableDialog(newUserVariable);
 	}
@@ -149,7 +149,7 @@ public class NewVariableDialog extends DialogFragment {
 		positiveButton.setEnabled(false);
 
 		EditText dialogEditText = (EditText) dialogNewVariable
-				.findViewById(R.id.dialog_formula_editor_variable_name_edit_text);
+				.findViewById(R.id.dialog_formula_editor_data_name_edit_text);
 
 		InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(
 				Context.INPUT_METHOD_SERVICE);
@@ -169,7 +169,7 @@ public class NewVariableDialog extends DialogFragment {
 			public void afterTextChanged(Editable editable) {
 
 				String variableName = editable.toString();
-				if (ProjectManager.getInstance().getCurrentProject().getUserVariables()
+				/*if (ProjectManager.getInstance().getCurrentProject().getUserVariables()
 						.getUserVariable(variableName, ProjectManager.getInstance().getCurrentSprite()) != null) {
 
 					Toast.makeText(getActivity(), R.string.formula_editor_existing_variable, Toast.LENGTH_SHORT).show();
@@ -177,7 +177,7 @@ public class NewVariableDialog extends DialogFragment {
 					positiveButton.setEnabled(false);
 				} else {
 					positiveButton.setEnabled(true);
-				}
+				}*/
 
 				if (editable.length() == 0) {
 					positiveButton.setEnabled(false);

@@ -32,14 +32,11 @@ import android.content.IntentFilter;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
@@ -47,6 +44,13 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBar;
+import android.view.Menu;
+
+import android.view.MenuItem;
+import android.view.MenuInflater;
 
 import org.catrobat.catroid.ProjectManager;
 import org.catrobat.catroid.R;
@@ -64,6 +68,7 @@ import org.catrobat.catroid.ui.dialogs.CustomAlertDialogBuilder;
 import org.catrobat.catroid.ui.dialogs.FormulaEditorComputeDialog;
 import org.catrobat.catroid.ui.dialogs.NewStringDialog;
 import org.catrobat.catroid.utils.ToastUtil;
+
 
 public class FormulaEditorFragment extends BaseFragment implements OnKeyListener,
 		ViewTreeObserver.OnGlobalLayoutListener {
@@ -137,9 +142,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 
 	public static void showFragment(View view, FormulaBrick formulaBrick, Brick.BrickField brickField) {
 
-
-		FragmentActivity activity = null;
-		activity = (FragmentActivity) view.getContext();
+		FragmentActivity activity = (FragmentActivity) view.getContext();
 
 		FormulaEditorFragment formulaEditorFragment = (FormulaEditorFragment) activity.getSupportFragmentManager()
 				.findFragmentByTag(FORMULA_EDITOR_FRAGMENT_TAG);
@@ -339,7 +342,6 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 			menu.getItem(index).setVisible(false);
 		}
 
-
 		MenuItem undo = menu.findItem(R.id.menu_undo);
 		if (!formulaEditorEditText.getHistory().undoIsPossible()) {
 			undo.setIcon(R.drawable.icon_undo_disabled);
@@ -360,17 +362,16 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 
 		menu.findItem(R.id.menu_undo).setVisible(true);
 		menu.findItem(R.id.menu_redo).setVisible(true);
-
 		getSupportActivity().getSupportActionBar().setDisplayShowTitleEnabled(true);
 		getSupportActivity().getSupportActionBar().setTitle(getString(R.string.formula_editor_title));
-
 
 		super.onPrepareOptionsMenu(menu);
 	}
 
 	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.menu_formulaeditor, menu);
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+	{
+		getActivity().getMenuInflater().inflate(R.menu.menu_formulaeditor, menu);
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 
@@ -487,13 +488,13 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 								}
 							}).setPositiveButton(R.string.yes, new OnClickListener() {
 
-								@Override
-								public void onClick(DialogInterface dialog, int which) {
-									if (saveFormulaIfPossible()) {
-										onUserDismiss();
-									}
-								}
-							}).create().show();
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							if (saveFormulaIfPossible()) {
+								onUserDismiss();
+							}
+						}
+					}).create().show();
 
 				} else {
 					onUserDismiss();
@@ -540,7 +541,6 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		((FormulaEditorListFragment) fragment).showFragment(context);
 	}
 
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -555,10 +555,8 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		return super.onOptionsItemSelected(item);
 	}
 
-
-	private void showFormulaEditorVariableListFragment(String tag, int actionbarResId) {
+	private void showFormulaEditorDataFragment(String tag, int actionbarResId) {
 		FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
-
 		Fragment fragment = fragmentManager.findFragmentByTag(tag);
 
 		if (fragment == null) {
@@ -575,10 +573,8 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 			fragment.setArguments(bundle);
 			fragmentManager.beginTransaction().add(R.id.script_fragment_container, fragment, tag).commit();
 		}
-
-		((FormulaEditorVariableListFragment) fragment).setAddButtonListener(getSupportActivity());
-		((FormulaEditorVariableListFragment) fragment).showFragment(context);
-
+		((FormulaEditorDataFragment) fragment).setAddButtonListener(getSupportActivity());
+		((FormulaEditorDataFragment) fragment).showFragment(context);
 	}
 
 
@@ -640,33 +636,16 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		}
 
 		IntentFilter filterVariableDeleted = new IntentFilter(ScriptActivity.ACTION_VARIABLE_DELETED);
-
-		getActivity().registerReceiver(variableDeletedReceiver, filterVariableDeleted);
 		BottomBar.hideBottomBar(getSupportActivity());
+		filterVariableDeleted.addAction(ScriptActivity.ACTION_USERLIST_DELETED);
+		getActivity().registerReceiver(variableOrUserListDeletedReceiver, filterVariableDeleted);
 	}
 
-	public void updateButtonViewOnKeyboard() {
+	public void updateButtonsOnKeyboardAndInvalidateOptionsMenu() {
+		getSupportActivity().invalidateOptionsMenu();
 
-		ImageButton undo = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_keyboard_undo);
-		if (!formulaEditorEditText.getHistory().undoIsPossible()) {
-			undo.setImageResource(R.drawable.icon_undo_disabled);
-			undo.setEnabled(false);
-		} else {
-			undo.setImageResource(R.drawable.icon_undo);
-			undo.setEnabled(true);
-		}
-
-		ImageButton redo = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_keyboard_redo);
-		if (!formulaEditorEditText.getHistory().redoIsPossible()) {
-			redo.setImageResource(R.drawable.icon_redo_disabled);
-			redo.setEnabled(false);
-		} else {
-			redo.setImageResource(R.drawable.icon_redo);
-			redo.setEnabled(true);
-		}
-
-		ImageButton backspace = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_edit_field_clear);
-
+		ImageButton backspaceEditText = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_edit_field_clear);
+		ImageButton backspaceOnKeyboard = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_keyboard_delete);
 		if (!formulaEditorEditText.isThereSomethingToDelete()) {
 			backspaceEditText.setImageResource(R.drawable.icon_backspace_disabled);
 			backspaceEditText.setEnabled(false);
