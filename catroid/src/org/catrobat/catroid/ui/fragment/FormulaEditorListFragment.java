@@ -177,11 +177,7 @@ public class FormulaEditorListFragment extends BaseListFragment implements Dialo
 	}
 
 	@Override
-<<<<<<< HEAD
-	public boolean onKey(DialogInterface dialogInterface, int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-				FragmentTransaction fragTransaction = getSherlockActivity().getSupportFragmentManager()
-=======
+
 	public boolean onKey(DialogInterface d, int keyCode, KeyEvent event) {
 		Log.i("info", "onKey() in FE-ListFragment! keyCode: " + keyCode);
 		boolean returnValue = false;
@@ -189,7 +185,6 @@ public class FormulaEditorListFragment extends BaseListFragment implements Dialo
 			case KeyEvent.KEYCODE_BACK:
 				Log.i("info", "KEYCODE_BACK pressed in FE-ListFragment!");
 				FragmentTransaction fragTransaction = getActivity().getSupportFragmentManager()
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
 						.beginTransaction();
 				fragTransaction.hide(this);
 				fragTransaction.show(getActivity().getSupportFragmentManager().findFragmentByTag(

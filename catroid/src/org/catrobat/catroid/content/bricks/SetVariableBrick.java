@@ -150,13 +150,10 @@ public class SetVariableBrick extends UserVariableBrick {
 						&& ((Spinner) view).getAdapter().getCount() == 1)) {
 					NewDataDialog dialog = new NewDataDialog((Spinner) view, NewDataDialog.DialogType.USER_VARIABLE);
 					dialog.addVariableDialogListener(SetVariableBrick.this);
-<<<<<<< HEAD
-					dialog.show(((SherlockFragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewDataDialog.DIALOG_FRAGMENT_TAG);
-=======
+
 					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
 							NewVariableDialog.DIALOG_FRAGMENT_TAG);
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 					return true;
 				}
 
@@ -169,13 +166,10 @@ public class SetVariableBrick extends UserVariableBrick {
 				if (position == 0 && ((UserVariableAdapterWrapper) parent.getAdapter()).isTouchInDropDownView()) {
 					NewDataDialog dialog = new NewDataDialog((Spinner) parent, NewDataDialog.DialogType.USER_VARIABLE);
 					dialog.addVariableDialogListener(SetVariableBrick.this);
-<<<<<<< HEAD
-					dialog.show(((SherlockFragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewDataDialog.DIALOG_FRAGMENT_TAG);
-=======
+
 					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
 							NewVariableDialog.DIALOG_FRAGMENT_TAG);
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 				}
 				((UserVariableAdapterWrapper) parent.getAdapter()).resetIsTouchInDropDownView();
 				userVariable = (UserVariable) parent.getItemAtPosition(position);
