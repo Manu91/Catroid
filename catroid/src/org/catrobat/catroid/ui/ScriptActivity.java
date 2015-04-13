@@ -28,11 +28,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-<<<<<<< HEAD
+
 import android.util.Log;
-=======
+
 import android.support.v7.app.ActionBar;
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;

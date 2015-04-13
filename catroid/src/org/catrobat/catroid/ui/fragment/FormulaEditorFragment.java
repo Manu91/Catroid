@@ -48,16 +48,6 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-<<<<<<< HEAD
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
-
-=======
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
 import org.catrobat.catroid.ProjectManager;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.bricks.Brick;
@@ -147,12 +137,9 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 
 	public static void showFragment(View view, FormulaBrick formulaBrick, Brick.BrickField brickField) {
 
-<<<<<<< HEAD
-		SherlockFragmentActivity activity = (SherlockFragmentActivity) view.getContext();
-=======
+
 		FragmentActivity activity = null;
 		activity = (FragmentActivity) view.getContext();
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
 
 		FormulaEditorFragment formulaEditorFragment = (FormulaEditorFragment) activity.getSupportFragmentManager()
 				.findFragmentByTag(FORMULA_EDITOR_FRAGMENT_TAG);
@@ -352,7 +339,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 			menu.getItem(index).setVisible(false);
 		}
 
-<<<<<<< HEAD
+
 		MenuItem undo = menu.findItem(R.id.menu_undo);
 		if (!formulaEditorEditText.getHistory().undoIsPossible()) {
 			undo.setIcon(R.drawable.icon_undo_disabled);
@@ -373,12 +360,10 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 
 		menu.findItem(R.id.menu_undo).setVisible(true);
 		menu.findItem(R.id.menu_redo).setVisible(true);
-		getSherlockActivity().getSupportActionBar().setDisplayShowTitleEnabled(true);
-		getSherlockActivity().getSupportActionBar().setTitle(getString(R.string.formula_editor_title));
-=======
+
 		getSupportActivity().getSupportActionBar().setDisplayShowTitleEnabled(true);
 		getSupportActivity().getSupportActionBar().setTitle(getString(R.string.formula_editor_title));
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 
 		super.onPrepareOptionsMenu(menu);
 	}
@@ -555,7 +540,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		((FormulaEditorListFragment) fragment).showFragment(context);
 	}
 
-<<<<<<< HEAD
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -570,12 +555,10 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		return super.onOptionsItemSelected(item);
 	}
 
-	private void showFormulaEditorDataFragment(String tag, int actionbarResId) {
-		FragmentManager fragmentManager = ((SherlockFragmentActivity) context).getSupportFragmentManager();
-=======
+
 	private void showFormulaEditorVariableListFragment(String tag, int actionbarResId) {
 		FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 		Fragment fragment = fragmentManager.findFragmentByTag(tag);
 
 		if (fragment == null) {
@@ -592,13 +575,10 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 			fragment.setArguments(bundle);
 			fragmentManager.beginTransaction().add(R.id.script_fragment_container, fragment, tag).commit();
 		}
-<<<<<<< HEAD
-		((FormulaEditorDataFragment) fragment).setAddButtonListener(getSherlockActivity());
-		((FormulaEditorDataFragment) fragment).showFragment(context);
-=======
+
 		((FormulaEditorVariableListFragment) fragment).setAddButtonListener(getSupportActivity());
 		((FormulaEditorVariableListFragment) fragment).showFragment(context);
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 	}
 
 
@@ -660,18 +640,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		}
 
 		IntentFilter filterVariableDeleted = new IntentFilter(ScriptActivity.ACTION_VARIABLE_DELETED);
-<<<<<<< HEAD
-		BottomBar.hideBottomBar(getSherlockActivity());
-		filterVariableDeleted.addAction(ScriptActivity.ACTION_USERLIST_DELETED);
-		getActivity().registerReceiver(variableOrUserListDeletedReceiver, filterVariableDeleted);
-	}
 
-	public void updateButtonsOnKeyboardAndInvalidateOptionsMenu() {
-		getSherlockActivity().invalidateOptionsMenu();
-
-		ImageButton backspaceEditText = (ImageButton) getSherlockActivity().findViewById(R.id.formula_editor_edit_field_clear);
-		ImageButton backspaceOnKeyboard = (ImageButton) getSherlockActivity().findViewById(R.id.formula_editor_keyboard_delete);
-=======
 		getActivity().registerReceiver(variableDeletedReceiver, filterVariableDeleted);
 		BottomBar.hideBottomBar(getSupportActivity());
 	}
@@ -697,7 +666,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		}
 
 		ImageButton backspace = (ImageButton) getSupportActivity().findViewById(R.id.formula_editor_edit_field_clear);
->>>>>>> ActionBar Sherlock is replaced with ActionBarCompat
+
 		if (!formulaEditorEditText.isThereSomethingToDelete()) {
 			backspaceEditText.setImageResource(R.drawable.icon_backspace_disabled);
 			backspaceEditText.setEnabled(false);
