@@ -48,6 +48,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import android.view.MenuInflater;
+
 import org.catrobat.catroid.ProjectManager;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.Project;
@@ -61,12 +63,12 @@ import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog.NewUserListDialogListener;
+import org.catrobat.catroid.ui.dialogs.NewVariableDialog;
 import org.catrobat.catroid.utils.Utils;
 
 
-public class FormulaEditorVariableListFragment extends BaseListFragment implements Dialog.OnKeyListener,
-		UserVariableAdapter.OnCheckedChangeListener, UserVariableAdapter.OnListItemClickListener,
-		NewVariableDialogListener {
+public class FormulaEditorDataFragment extends BaseListFragment implements Dialog.OnKeyListener,
+		DataAdapter.OnCheckedChangeListener, DataAdapter.OnListItemClickListener, NewUserListDialogListener, NewDataDialog.NewVariableDialogListener {
 
 	public static final String USER_DATA_TAG = "userDataFragment";
 	public static final String ACTION_BAR_TITLE_BUNDLE_ARGUMENT = "actionBarTitle";
@@ -113,7 +115,7 @@ public class FormulaEditorVariableListFragment extends BaseListFragment implemen
 		if (!inContextMode) {
 			super.onCreateContextMenu(menu, view, menuInfo);
 
-			getActivity().getMenuInflater().inflate(R.menu.menu_formulaeditor_variablelist, menu);
+			getActivity().getMenuInflater().inflate(R.menu.context_menu_formulaeditor_userlist, menu);
 
 		}
 	}
@@ -212,7 +214,7 @@ public class FormulaEditorVariableListFragment extends BaseListFragment implemen
 			public void onClick(View view) {
 
 				NewVariableDialog dialog = new NewVariableDialog();
-				dialog.addVariableDialogListener(FormulaEditorVariableListFragment.this);
+				//dialog.addVariableDialogListener(FormulaEditorDataFragment.this);
 				dialog.show(fragmentActivity.getSupportFragmentManager(), NewVariableDialog.DIALOG_FRAGMENT_TAG);
 			}
 		});
@@ -293,8 +295,8 @@ public class FormulaEditorVariableListFragment extends BaseListFragment implemen
 		int userBrickId = (currentBrick == null ? -1 : currentBrick.getUserBrickId());
 		Project currentProject = ProjectManager.getInstance().getCurrentProject();
 
-		UserVariablesContainer userVariableContainer = currentProject.getUserVariables();
-		adapter = userVariableContainer.createUserVariableAdapter(getActivity(), userBrickId, currentSprite, inUserBrick);
+		//UserVariablesContainer userVariableContainer = currentProject.getUserVariables();
+		//adapter = userVariableContainer.createUserVariableAdapter(getActivity(), userBrickId, currentSprite, inUserBrick);
 
 		setListAdapter(adapter);
 		adapter.setOnCheckedChangeListener(this);

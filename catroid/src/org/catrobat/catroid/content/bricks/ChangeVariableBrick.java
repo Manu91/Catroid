@@ -152,7 +152,7 @@ public class ChangeVariableBrick extends UserVariableBrick {
 					dialog.addVariableDialogListener(ChangeVariableBrick.this);
 
 					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewVariableDialog.DIALOG_FRAGMENT_TAG);
+							NewDataDialog.DIALOG_FRAGMENT_TAG);
 
 					return true;
 
@@ -169,7 +169,7 @@ public class ChangeVariableBrick extends UserVariableBrick {
 					dialog.addVariableDialogListener(ChangeVariableBrick.this);
 
 					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewVariableDialog.DIALOG_FRAGMENT_TAG);
+							NewDataDialog.DIALOG_FRAGMENT_TAG);
 				}
 				((UserVariableAdapterWrapper) parent.getAdapter()).resetIsTouchInDropDownView();
 				userVariable = (UserVariable) parent.getItemAtPosition(position);
