@@ -80,7 +80,7 @@ public class FormulaEditorDataFragment extends BaseListFragment implements Dialo
 	private boolean inContextMode;
 	private int deleteIndex;
 	private DataAdapter adapter;
-	private boolean inUserBrick;
+	//private boolean inUserBrick;
 
 	public FormulaEditorDataFragment(boolean inUserBrick) {
 		contextActionMode = null;
@@ -290,10 +290,10 @@ public class FormulaEditorDataFragment extends BaseListFragment implements Dialo
 	}
 
 	private void initializeDataAdapter() {
-		Sprite currentSprite = ProjectManager.getInstance().getCurrentSprite();
-		UserBrick currentBrick = ProjectManager.getInstance().getCurrentUserBrick();
-		int userBrickId = (currentBrick == null ? -1 : currentBrick.getUserBrickId());
-		Project currentProject = ProjectManager.getInstance().getCurrentProject();
+		//Sprite currentSprite = ProjectManager.getInstance().getCurrentSprite();
+		//UserBrick currentBrick = ProjectManager.getInstance().getCurrentUserBrick();
+		//int userBrickId = (currentBrick == null ? -1 : currentBrick.getUserBrickId());
+		//Project currentProject = ProjectManager.getInstance().getCurrentProject();
 
 		//UserVariablesContainer userVariableContainer = currentProject.getUserVariables();
 		//adapter = userVariableContainer.createUserVariableAdapter(getActivity(), userBrickId, currentSprite, inUserBrick);
