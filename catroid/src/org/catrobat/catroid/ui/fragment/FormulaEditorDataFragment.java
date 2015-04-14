@@ -79,8 +79,8 @@ public class FormulaEditorDataFragment extends BaseListFragment implements Dialo
 	private View selectAllActionModeButton;
 	private boolean inContextMode;
 	private int deleteIndex;
-	private DataAdapter adapter;
-	//private boolean inUserBrick;
+	public DataAdapter adapter;
+	public boolean inUserBrick;
 
 	public FormulaEditorDataFragment(boolean inUserBrick) {
 		contextActionMode = null;
@@ -215,7 +215,7 @@ public class FormulaEditorDataFragment extends BaseListFragment implements Dialo
 
 				NewVariableDialog dialog = new NewVariableDialog();
 				//dialog.addVariableDialogListener(FormulaEditorDataFragment.this);
-				dialog.show(fragmentActivity.getSupportFragmentManager(), NewVariableDialog.DIALOG_FRAGMENT_TAG);
+				dialog.show(fragmentActivity.getSupportFragmentManager(), NewDataDialog.DIALOG_FRAGMENT_TAG);
 			}
 		});
 	}
