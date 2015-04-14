@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewVariableDialog extends DialogFragment {
-
+/*
 	public static final String DIALOG_FRAGMENT_TAG = "dialog_new_variable_catroid";
 	Spinner spinnerToUpdate;
 
@@ -118,16 +118,16 @@ public class NewVariableDialog extends DialogFragment {
 	}
 
 	private void handleOkButton(View dialogView) {
-		EditText variableNameEditText = (EditText) dialogView
-				.findViewById(R.id.dialog_brick_editor_edit_element_edit_text);
-		RadioButton localVariable = (RadioButton) dialogView
-				.findViewById(R.id.dialog_formula_editor_data_name_local_variable_radio_button);
-		RadioButton globalVariable = (RadioButton) dialogView
-				.findViewById(R.id.dialog_formula_editor_data_name_global_variable_radio_button);
+		//EditText variableNameEditText = (EditText) dialogView
+				//.findViewById(R.id.dialog_brick_editor_edit_element_edit_text);
+		//RadioButton localVariable = (RadioButton) dialogView
+				//.findViewById(R.id.dialog_formula_editor_data_name_local_variable_radio_button);
+		//RadioButton globalVariable = (RadioButton) dialogView
+				//.findViewById(R.id.dialog_formula_editor_data_name_global_variable_radio_button);
 
-		String variableName = variableNameEditText.getText().toString();
+		//String variableName = variableNameEditText.getText().toString();
 		UserVariable newUserVariable = null;
-		if (globalVariable.isChecked()) {
+		//if (globalVariable.isChecked()) {
 			/*if (ProjectManager.getInstance().getCurrentProject().getUserVariables()
 					.getUserVariable(variableName, ProjectManager.getInstance().getCurrentSprite()) != null) {
 
@@ -139,8 +139,8 @@ public class NewVariableDialog extends DialogFragment {
 			}
 		} else if (localVariable.isChecked()) {
 			newUserVariable = ProjectManager.getInstance().getCurrentProject().getUserVariables()
-					.addSpriteUserVariable(variableName);*/
-		}
+					.addSpriteUserVariable(variableName);
+		//}
 		variableDialogListenerListFinishNewVariableDialog(newUserVariable);
 	}
 
@@ -177,13 +177,13 @@ public class NewVariableDialog extends DialogFragment {
 					positiveButton.setEnabled(false);
 				} else {
 					positiveButton.setEnabled(true);
-				}*/
+				}
 
 				if (editable.length() == 0) {
 					positiveButton.setEnabled(false);
 				}
 			}
 		});
-	}
+	}*/
 
 }

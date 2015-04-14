@@ -180,7 +180,7 @@ public class FormulaEditorListFragment extends BaseListFragment implements Dialo
 
 	public boolean onKey(DialogInterface d, int keyCode, KeyEvent event) {
 		//Log.i("info", "onKey() in FE-ListFragment! keyCode: " + keyCode);
-		boolean returnValue = false;
+		//boolean returnValue = false;
 		switch (keyCode) {
 			case KeyEvent.KEYCODE_BACK:
 				//Log.i("info", "KEYCODE_BACK pressed in FE-ListFragment!");
