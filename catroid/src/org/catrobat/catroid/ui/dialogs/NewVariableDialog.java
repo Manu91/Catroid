@@ -20,7 +20,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.catrobat.catroid.ui.dialogs;
+/*package org.catrobat.catroid.ui.dialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewVariableDialog extends DialogFragment {
-/*
+
 	public static final String DIALOG_FRAGMENT_TAG = "dialog_new_variable_catroid";
 	Spinner spinnerToUpdate;
 
@@ -184,6 +184,6 @@ public class NewVariableDialog extends DialogFragment {
 				}
 			}
 		});
-	}*/
+	}
 
-}
+}*/
