@@ -38,8 +38,8 @@ public class LicenseTest extends TestCase {
 	private static final String[] DIRECTORIES = Utils.SOURCE_AND_RESOURCE_DIRECTORIES;
 
 	private List<String> agplLicenseText;
-	public boolean allLicenseTextsPresentAndCorrect;
-	public String errorMessages;
+	private boolean allLicenseTextsPresentAndCorrect;
+	private String errorMessages;
 
 	@Override
 	public void setUp() throws IOException {
@@ -103,8 +103,8 @@ public class LicenseTest extends TestCase {
 	public void testLicensePresentInAllFiles() throws IOException {
 		for (String directoryName : DIRECTORIES) {
 			File directory = new File(directoryName);
-			//assertTrue("Couldn't find directory: " + directoryName, directory.exists() && directory.isDirectory());
-			//assertTrue("Couldn't read directory: " + directoryName, directory.canRead());
+			assertTrue("Couldn't find directory: " + directoryName, directory.exists() && directory.isDirectory());
+			assertTrue("Couldn't read directory: " + directoryName, directory.canRead());
 
 			List<File> filesToCheck = Utils.getFilesFromDirectoryByExtension(directory, new String[] { ".java", ".xml",
 					".rb" });
@@ -112,7 +112,7 @@ public class LicenseTest extends TestCase {
 				checkFileForLicense(file, agplLicenseText);
 			}
 		}
-		//assertTrue("Correct license text was not found in all files:\n" + errorMessages,
-				//allLicenseTextsPresentAndCorrect);
+		assertTrue("Correct license text was not found in all files:\n" + errorMessages,
+				allLicenseTextsPresentAndCorrect);
 	}
 }
