@@ -63,7 +63,6 @@ import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog.NewUserListDialogListener;
-import org.catrobat.catroid.ui.dialogs.NewVariableDialog;
 import org.catrobat.catroid.utils.Utils;
 
 
@@ -213,9 +212,10 @@ public class FormulaEditorDataFragment extends BaseListFragment implements Dialo
 			@Override
 			public void onClick(View view) {
 
-				NewVariableDialog dialog = new NewVariableDialog();
+				// ???
+				//NewVariableDialog dialog = new NewVariableDialog();
 				//dialog.addVariableDialogListener(FormulaEditorDataFragment.this);
-				dialog.show(fragmentActivity.getSupportFragmentManager(), NewDataDialog.DIALOG_FRAGMENT_TAG);
+				//dialog.show(fragmentActivity.getSupportFragmentManager(), NewDataDialog.DIALOG_FRAGMENT_TAG);
 			}
 		});
 	}
