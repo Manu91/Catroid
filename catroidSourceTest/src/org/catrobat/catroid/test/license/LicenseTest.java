@@ -38,7 +38,7 @@ public class LicenseTest extends TestCase {
 	private static final String[] DIRECTORIES = Utils.SOURCE_AND_RESOURCE_DIRECTORIES;
 
 	private List<String> agplLicenseText;
-	private boolean allLicenseTextsPresentAndCorrect;
+	public boolean allLicenseTextsPresentAndCorrect;
 	private String errorMessages;
 
 	@Override
