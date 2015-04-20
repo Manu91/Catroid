@@ -577,7 +577,7 @@ public class FormulaEditorFragment extends BaseFragment implements OnKeyListener
 		((FormulaEditorDataFragment) fragment).showFragment(context);
 	}
 
-
+	//??? deprecated
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onGlobalLayout() {

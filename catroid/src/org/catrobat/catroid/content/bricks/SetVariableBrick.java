@@ -149,6 +149,7 @@ public class SetVariableBrick extends UserVariableBrick {
 				if (event.getAction() == MotionEvent.ACTION_UP
 						&& (((Spinner) view).getSelectedItemPosition() == 0
 						&& ((Spinner) view).getAdapter().getCount() == 1)) {
+					//??? (NewVariableDialog)
 					NewDataDialog dialog = new NewDataDialog((Spinner) view, NewDataDialog.DialogType.USER_VARIABLE);
 					dialog.addVariableDialogListener(SetVariableBrick.this);
 
@@ -165,6 +166,7 @@ public class SetVariableBrick extends UserVariableBrick {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				if (position == 0 && ((UserVariableAdapterWrapper) parent.getAdapter()).isTouchInDropDownView()) {
+					//??? (NewVariableDialog)
 					NewDataDialog dialog = new NewDataDialog((Spinner) parent, NewDataDialog.DialogType.USER_VARIABLE);
 					dialog.addVariableDialogListener(SetVariableBrick.this);
 
