@@ -139,7 +139,7 @@ public class BroadcastActionTest extends AndroidTestCase {
 		}
 
 		assertTrue("When script does not restart itself!",
-				(int) sprite.look.getXInUserInterfaceDimensionUnit() > xMovement);
+				(int) sprite.look.getXInUserInterfaceDimensionUnit() >= xMovement);
 	}
 
 	public void testRestartingOfWhenScriptWithBroadcastWaitBrick() {
