@@ -38,7 +38,7 @@ public class LicenseTest extends TestCase {
 	private static final String[] DIRECTORIES = Utils.SOURCE_AND_RESOURCE_DIRECTORIES;
 
 	private List<String> agplLicenseText;
-	public boolean allLicenseTextsPresentAndCorrect;
+	private boolean allLicenseTextsPresentAndCorrect;
 	private String errorMessages;
 
 	@Override
@@ -112,7 +112,7 @@ public class LicenseTest extends TestCase {
 				checkFileForLicense(file, agplLicenseText);
 			}
 		}
-		//assertTrue("Correct license text was not found in all files:\n" + errorMessages,
-				//allLicenseTextsPresentAndCorrect);
+		assertTrue("Correct license text was not found in all files:\n" + errorMessages,
+				allLicenseTextsPresentAndCorrect);
 	}
 }

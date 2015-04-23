@@ -149,12 +149,11 @@ public class SetVariableBrick extends UserVariableBrick {
 						&& (((Spinner) view).getSelectedItemPosition() == 0
 						&& ((Spinner) view).getAdapter().getCount() == 1)) {
 					//??? (NewVariableDialog)
-					NewDataDialog dialog = new NewDataDialog((Spinner) view, NewDataDialog.DialogType.USER_VARIABLE);
-					dialog.addVariableDialogListener(SetVariableBrick.this);
+					//NewVariableDialog dialog = new NewVariableDialog((Spinner) view, NewVariableDialog.DialogType.USER_VARIABLE);
+					//dialog.addVariableDialogListener(SetVariableBrick.this);
 
-					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewDataDialog.DIALOG_FRAGMENT_TAG);
-
+					//dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
+							//NewVariableDialog.DIALOG_FRAGMENT_TAG);
 					return true;
 				}
 
@@ -164,15 +163,15 @@ public class SetVariableBrick extends UserVariableBrick {
 		variableSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-				if (position == 0 && ((UserVariableAdapterWrapper) parent.getAdapter()).isTouchInDropDownView()) {
+				//if (position == 0 && ((UserVariableAdapterWrapper) parent.getAdapter()).isTouchInDropDownView()) {
 					//??? (NewVariableDialog)
-					NewDataDialog dialog = new NewDataDialog((Spinner) parent, NewDataDialog.DialogType.USER_VARIABLE);
-					dialog.addVariableDialogListener(SetVariableBrick.this);
+					//NewVariableDialog dialog = new NewVariableDialog((Spinner) parent, NewVariableDialog.DialogType.USER_VARIABLE);
+					//dialog.addVariableDialogListener(SetVariableBrick.this);
 
-					dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
-							NewDataDialog.DIALOG_FRAGMENT_TAG);
+					//dialog.show(((FragmentActivity) view.getContext()).getSupportFragmentManager(),
+							//NewVariableDialog.DIALOG_FRAGMENT_TAG);
 
-				}
+				//}
 				((UserVariableAdapterWrapper) parent.getAdapter()).resetIsTouchInDropDownView();
 				userVariable = (UserVariable) parent.getItemAtPosition(position);
 				adapterView = parent;

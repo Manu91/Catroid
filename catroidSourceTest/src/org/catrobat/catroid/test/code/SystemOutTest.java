@@ -43,7 +43,7 @@ public class SystemOutTest extends TestCase {
 	private static final String[] IGNORED_FILES = { "SystemOutTest.java", "ToastUtil.java", "BTServer.java"};
 	private static final String SYSTEM_OUT = "System.out";
 	private static final String PRINT_STACK_TRACE = ".printStackTrace()";
-	//private static final String TOAST_STRING = "Toast.makeText";
+	private static final String TOAST_STRING = "Toast.makeText";
 	private static final String SUPERTOAST_STRING = "SuperToast";
 
 	private void checkFileForString(File file, String string) throws IOException {
@@ -108,11 +108,11 @@ public class SystemOutTest extends TestCase {
 		assertFalse("Files with '.printStackTrace()' found! \nPlease use 'Log.e(TAG, \"Reason for Exception\", exception)' or 'Log.e(TAG, Log.getStackTraceString(exception))' instead\n\n" + errorMessages, errorFound);
 	}
 
-	/*public void testForToast() throws IOException {
+	public void testForToast() throws IOException {
 		checkForStringInFiles(TOAST_STRING, STACK_TRACE_DIRECTORIES);
 		assertFalse("Files with 'Toast.makeText(context, text, duration)' found! \nPlease use 'ToastUtil.showError(context, message), or " +
 		"ToastUtil.showSuccess(context, message)' instead\n\n" + errorMessages, errorFound);
-	}*/
+	}
 
 	public void testForSuperToast() throws IOException {
 		checkForStringInFiles(SUPERTOAST_STRING, STACK_TRACE_DIRECTORIES);
