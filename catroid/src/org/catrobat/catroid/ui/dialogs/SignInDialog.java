@@ -27,9 +27,13 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
+import android.hardware.camera2.params.Face;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
@@ -43,6 +47,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
+import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -154,19 +159,38 @@ public class SignInDialog extends DialogFragment implements
 		facebookLoginButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Collection<String> permissions = Arrays.asList(FACEBOOK_PROFILE_PERMISSION, FACEBOOK_EMAIL_PERMISSION);
-				LoginManager.getInstance().logInWithReadPermissions(getActivity(), permissions);
+				if(isNetworkAvailable()) {
+					Collection<String> permissions = Arrays.asList(FACEBOOK_PROFILE_PERMISSION, FACEBOOK_EMAIL_PERMISSION);
+					LoginManager.getInstance().logInWithReadPermissions(getActivity(), permissions);
+				}
+				else
+				{
+					ToastUtil.showError(getActivity(), "Sorry, no internet connection!");
+				}
 			}
 		});
 
 		gplusLoginButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				handleGooglePlusLoginButtonClick(view);
+				if(isNetworkAvailable()) {
+					handleGooglePlusLoginButtonClick(view);
+				}
+				else
+				{
+					ToastUtil.showError(getActivity(), "Sorry, no internet connection!");
+				}
 			}
 		});
 
 		return signInDialog;
+	}
+
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager
+				= (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+		return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
 	}
 
 	private void initializeGooglePlus() {
