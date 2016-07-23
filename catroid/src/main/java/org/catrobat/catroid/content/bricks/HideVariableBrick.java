@@ -32,6 +32,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 
@@ -45,6 +46,7 @@ import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.adapter.UserVariableAdapterWrapper;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -76,7 +78,11 @@ public class HideVariableBrick extends UserVariableBrick {
 
 		view = View.inflate(context, R.layout.brick_hide_variable, null);
 		view = getViewWithAlpha(alphaValue);
+
 		setCheckboxView(R.id.brick_hide_variable_checkbox);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_hide_variable_label),
+				context.getString(R.string.category_looks));
 
 		final Brick brickInstance = this;
 		checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

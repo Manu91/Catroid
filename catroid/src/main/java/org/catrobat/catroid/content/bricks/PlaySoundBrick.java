@@ -50,6 +50,7 @@ import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.controller.SoundController;
 import org.catrobat.catroid.ui.fragment.SoundFragment;
 import org.catrobat.catroid.ui.fragment.SoundFragment.OnSoundInfoListChangedAfterNewListener;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -97,6 +98,9 @@ public class PlaySoundBrick extends BrickBaseType implements OnItemSelectedListe
 
 		view = View.inflate(context, R.layout.brick_play_sound, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_play_sound_label),
+				context.getString(R.string.category_sound));
 
 		setCheckboxView(R.id.brick_play_sound_checkbox);
 

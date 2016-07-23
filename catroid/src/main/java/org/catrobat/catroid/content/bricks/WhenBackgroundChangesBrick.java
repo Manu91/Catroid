@@ -52,6 +52,7 @@ import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.controller.LookController;
 import org.catrobat.catroid.ui.fragment.LookFragment;
 import org.catrobat.catroid.ui.fragment.LookFragment.OnLookDataListChangedAfterNewListener;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -118,6 +119,9 @@ public class WhenBackgroundChangesBrick extends BrickBaseType implements
 		final Brick brickInstance = this;
 		view = View.inflate(context, R.layout.brick_when_background_changes_to, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_when_background_text_view),
+				context.getString(R.string.category_event));
 
 		setCheckboxView(R.id.brick_when_background_checkbox);
 		checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {

@@ -38,6 +38,7 @@ import org.catrobat.catroid.content.Scene;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -89,6 +90,9 @@ public class RepeatUntilBrick extends FormulaBrick implements LoopBeginBrick {
 
 		view = View.inflate(context, R.layout.brick_repeat_until, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_repeat_until_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_repeat_until_checkbox);
 

@@ -45,6 +45,7 @@ import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.formulaeditor.FormulaElement;
 import org.catrobat.catroid.ui.fragment.ColorSeekbar;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -163,6 +164,10 @@ public class PhiroRGBLightBrick extends FormulaBrick {
 		}
 
 		view = View.inflate(context, R.layout.brick_phiro_rgb_light, null);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_phiro_rgb_led_action_label),
+				context.getString(R.string.category_phiro));
+
 		setCheckboxView(R.id.brick_phiro_rgb_led_action_checkbox);
 
 		final Brick brickInstance = this;

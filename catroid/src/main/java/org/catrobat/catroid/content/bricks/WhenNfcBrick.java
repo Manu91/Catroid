@@ -49,6 +49,7 @@ import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.content.WhenNfcScript;
 import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.fragment.NfcTagFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -129,6 +130,9 @@ public class WhenNfcBrick extends BrickBaseType implements ScriptBrick, NfcTagFr
 		final Brick brickInstance = this;
 		view = View.inflate(context, R.layout.brick_when_nfc, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_when_nfc_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_when_nfc_checkbox);
 		checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

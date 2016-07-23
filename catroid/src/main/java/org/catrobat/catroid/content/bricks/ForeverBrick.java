@@ -35,6 +35,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.Sprite;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -68,6 +69,9 @@ public class ForeverBrick extends BrickBaseType implements LoopBeginBrick {
 		}
 		view = View.inflate(context, R.layout.brick_forever, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_forever_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_forever_checkbox);
 		final Brick brickInstance = this;

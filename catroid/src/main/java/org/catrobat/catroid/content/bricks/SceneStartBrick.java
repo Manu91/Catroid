@@ -50,6 +50,7 @@ import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.dialogs.NewSceneDialog;
 import org.catrobat.catroid.ui.dialogs.NewSpriteDialog;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -298,6 +299,8 @@ public class SceneStartBrick extends BrickBaseType implements NewSceneDialog.OnN
 					switchToNewSceneDialogFromScriptFragment();
 				}
 			}
+			IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_scene_start_label),
+					context.getString(R.string.category_control));
 			return spinnerAdapter.getView(paramInt, paramView, paramViewGroup);
 		}
 

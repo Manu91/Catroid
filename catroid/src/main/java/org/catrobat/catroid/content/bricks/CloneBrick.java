@@ -38,6 +38,7 @@ import org.catrobat.catroid.ProjectManager;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.controller.BackPackSpriteController;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -68,6 +69,9 @@ public class CloneBrick extends BrickBaseType {
 
 		view = View.inflate(context, R.layout.brick_clone, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_clone_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_clone_checkbox);
 

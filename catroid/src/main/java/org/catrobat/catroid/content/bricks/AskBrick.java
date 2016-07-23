@@ -49,6 +49,7 @@ import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.adapter.UserVariableAdapterWrapper;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -98,6 +99,10 @@ public class AskBrick extends UserVariableBrick {
 
 		view = View.inflate(context, R.layout.brick_ask, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_ask_label),
+				context.getString(R.string.category_looks));
+
 		setCheckboxView(R.id.brick_ask_checkbox);
 
 		final Brick brickInstance = this;
