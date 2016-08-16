@@ -53,6 +53,7 @@ import org.catrobat.catroid.ui.fragment.BackPackScriptFragment;
 import org.catrobat.catroid.ui.fragment.BackPackSoundFragment;
 import org.catrobat.catroid.ui.fragment.BackPackSpriteFragment;
 import org.catrobat.catroid.ui.fragment.BackPackUserBrickFragment;
+import org.catrobat.catroid.utils.DividerUtil;
 
 public class BackPackActivity extends BaseActivity {
 	public static final int FRAGMENT_BACKPACK_SCRIPTS = 0;

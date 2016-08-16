@@ -58,6 +58,7 @@ import org.catrobat.catroid.ui.DragNDropBrickLayout;
 import org.catrobat.catroid.ui.LineBreakListener;
 import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.dialogs.UserBrickEditElementDialog;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.ArrayList;
 import java.util.List;

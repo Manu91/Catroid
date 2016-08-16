@@ -28,6 +28,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.catrobat.catroid.utils.DividerUtil;
+
 import java.util.List;
 
 public class BrickCategoryAdapter extends BaseAdapter {
