@@ -32,6 +32,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.BaseAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 
@@ -43,6 +44,7 @@ import org.catrobat.catroid.content.Script;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.physics.PhysicsCollision;
 import org.catrobat.catroid.ui.dialogs.BrickTextDialog;
+import org.catrobat.catroid.utils.IconsUtil;
 import org.catrobat.catroid.utils.Utils;
 
 import java.util.List;
@@ -109,6 +111,10 @@ public class BroadcastReceiverBrick extends BrickBaseType implements ScriptBrick
 
 		view = View.inflate(context, R.layout.brick_broadcast_receive, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_broadcast_receive_label),
+				context.getString(R.string.category_control));
+
 		setCheckboxView(R.id.brick_broadcast_receive_checkbox);
 
 		// XXX method moved to to DragAndDropListView since it is not working on 2.x

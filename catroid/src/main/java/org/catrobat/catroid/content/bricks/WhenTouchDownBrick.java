@@ -37,6 +37,7 @@ import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.Script;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.content.WhenTouchDownScript;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -93,6 +94,9 @@ public class WhenTouchDownBrick extends BrickBaseType implements ScriptBrick {
 		final Brick brickInstance = this;
 		view = View.inflate(context, R.layout.brick_screen_touched, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_when_screen_touched_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_when_screen_touched_checkbox);
 		checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

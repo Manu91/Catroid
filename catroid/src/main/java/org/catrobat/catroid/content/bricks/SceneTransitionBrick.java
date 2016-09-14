@@ -50,6 +50,7 @@ import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.dialogs.NewSceneDialog;
 import org.catrobat.catroid.ui.dialogs.NewSpriteDialog;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +88,10 @@ public class SceneTransitionBrick extends BrickBaseType implements NewSceneDialo
 		}
 		view = View.inflate(context, R.layout.brick_scene_transition, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_scene_transition_label),
+				context.getString(R.string.category_control));
+
 		setCheckboxView(R.id.brick_scene_transition_checkbox);
 
 		checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {

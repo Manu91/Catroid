@@ -41,6 +41,7 @@ import org.catrobat.catroid.R;
 import org.catrobat.catroid.common.MessageContainer;
 import org.catrobat.catroid.content.BroadcastMessage;
 import org.catrobat.catroid.content.Sprite;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -72,6 +73,10 @@ public class BroadcastWaitBrick extends BroadcastBrick implements BroadcastMessa
 		}
 		view = View.inflate(context, R.layout.brick_broadcast_wait, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_broadcast_wait_label),
+				context.getString(R.string.category_control));
+
 		setCheckboxView(R.id.brick_broadcast_wait_checkbox);
 
 		checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {

@@ -41,6 +41,7 @@ import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.formulaeditor.InterpretationException;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 import org.catrobat.catroid.utils.Utils;
 
 import java.util.List;
@@ -80,6 +81,9 @@ public class MoveNStepsBrick extends FormulaBrick {
 		}
 		view = View.inflate(context, R.layout.brick_move_n_steps, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_loop_endless_label),
+				context.getString(R.string.category_motion));
 
 		setCheckboxView(R.id.brick_move_n_steps_checkbox);
 

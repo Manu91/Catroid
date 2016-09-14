@@ -30,12 +30,14 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import org.catrobat.catroid.ProjectManager;
+import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.bricks.Brick;
 import org.catrobat.catroid.content.bricks.UserBrick;
 import org.catrobat.catroid.ui.controller.BackPackListManager;
 import org.catrobat.catroid.ui.fragment.AddBrickFragment;
 import org.catrobat.catroid.ui.fragment.ScriptFragment;
 import org.catrobat.catroid.utils.DividerUtil;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,11 +46,12 @@ public class PrototypeBrickAdapter extends BrickBaseAdapter {
 
 	private OnBrickCheckedListener addBrickFragmentListener;
 
-	public PrototypeBrickAdapter(Context context, ScriptFragment scriptFragment, AddBrickFragment addBrickFragment, List<Brick> brickList) {
+	public PrototypeBrickAdapter(Context context, ScriptFragment scriptFragment, AddBrickFragment addBrickFragment, List<Brick> brickList, String selectedCategory) {
 		this.context = context;
 		this.scriptFragment = scriptFragment;
 		this.addBrickFragment = addBrickFragment;
 		this.brickList = brickList;
+		this.selectedCategory = selectedCategory;
 	}
 
 	@Override
@@ -199,6 +202,8 @@ public class PrototypeBrickAdapter extends BrickBaseAdapter {
 		}
 
 		DividerUtil.setDivider(context, parentView);
+
+		IconsUtil.addIcons((ViewGroup) convertView, selectedCategory);
 
 		return convertView;
 	}

@@ -49,6 +49,7 @@ import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.adapter.UserListAdapterWrapper;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -92,6 +93,10 @@ public class ReplaceItemInUserListBrick extends UserListBrick {
 
 		view = View.inflate(context, R.layout.brick_replace_item_in_userlist, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_replace_item_in_userlist_label),
+				context.getString(R.string.category_data));
+
 		setCheckboxView(R.id.brick_replace_item_in_userlist_checkbox);
 
 		final Brick brickInstance = this;

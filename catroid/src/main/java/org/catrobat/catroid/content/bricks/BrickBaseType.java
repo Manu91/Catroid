@@ -39,6 +39,7 @@ import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.BrickLayout;
 import org.catrobat.catroid.ui.adapter.BrickAdapter;
 import org.catrobat.catroid.utils.DividerUtil;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -116,6 +117,10 @@ public abstract class BrickBaseType implements Brick {
 
 	public void doPadding() {
 		if (!DividerUtil.isActivated()) {
+			if (adapter == null) {
+				return;
+			}
+		if (!IconsUtil.isActivated()) {
 			if (adapter == null) {
 				return;
 			}

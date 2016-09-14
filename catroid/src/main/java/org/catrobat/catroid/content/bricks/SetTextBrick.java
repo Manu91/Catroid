@@ -38,6 +38,7 @@ import org.catrobat.catroid.content.Scene;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 import org.catrobat.catroid.utils.Utils;
 
 import java.util.List;
@@ -97,6 +98,9 @@ public class SetTextBrick extends FormulaBrick implements View.OnClickListener {
 		}
 		view = View.inflate(context, R.layout.brick_drone_set_text, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_set_text_label),
+				context.getString(R.string.category_looks));
 
 		setCheckboxView(R.id.brick_set_text_checkbox);
 		final Brick brickInstance = this;

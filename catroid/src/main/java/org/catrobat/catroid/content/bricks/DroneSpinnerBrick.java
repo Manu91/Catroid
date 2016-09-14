@@ -34,6 +34,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.catrobat.catroid.R;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 
@@ -55,6 +56,10 @@ public abstract class DroneSpinnerBrick extends BrickBaseType {
 		}
 
 		view = View.inflate(context, R.layout.brick_drone_spinner, null);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_drone_spinner_label),
+				context.getString(R.string.category_drone));
+
 		setCheckboxView(R.id.brick_drone_spinner_checkbox);
 		checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 

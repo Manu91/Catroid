@@ -34,6 +34,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.content.Sprite;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -56,6 +57,9 @@ public class DeleteThisCloneBrick extends BrickBaseType {
 		}
 		view = View.inflate(context, R.layout.brick_delete_this_clone, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_delete_clone_label),
+				context.getString(R.string.category_control));
 
 		setCheckboxView(R.id.brick_delete_clone_checkbox);
 		final Brick brickInstance = this;

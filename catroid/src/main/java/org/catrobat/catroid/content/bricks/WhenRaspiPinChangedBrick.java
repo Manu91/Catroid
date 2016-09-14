@@ -29,6 +29,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 
@@ -38,6 +39,7 @@ import org.catrobat.catroid.content.RaspiInterruptScript;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.devices.raspberrypi.RaspberryPiService;
 import org.catrobat.catroid.ui.SettingsActivity;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,10 @@ public class WhenRaspiPinChangedBrick extends BrickBaseType implements ScriptBri
 
 		view = View.inflate(context, R.layout.brick_raspi_pin_changed, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.raspi_when_label),
+				context.getString(R.string.category_raspi));
+
 		setCheckboxView(R.id.brick_raspi_when_checkbox);
 
 		setupValueSpinner(context);

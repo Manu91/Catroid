@@ -30,6 +30,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import org.catrobat.catroid.R;
+import org.catrobat.catroid.utils.IconsUtil;
 
 public abstract class DroneBasicBrick extends BrickBaseType {
 
@@ -43,6 +44,9 @@ public abstract class DroneBasicBrick extends BrickBaseType {
 		}
 		view = View.inflate(context, R.layout.brick_drone, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.ValueTextView),
+				context.getString(R.string.category_drone));
 
 		setCheckboxView(R.id.brick_drone_basic_checkbox);
 		final Brick brickInstance = this;

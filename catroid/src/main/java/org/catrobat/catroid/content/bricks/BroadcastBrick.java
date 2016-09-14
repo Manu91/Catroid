@@ -45,6 +45,7 @@ import org.catrobat.catroid.content.BroadcastMessage;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.physics.PhysicsCollision;
 import org.catrobat.catroid.ui.dialogs.BrickTextDialog;
+import org.catrobat.catroid.utils.IconsUtil;
 import org.catrobat.catroid.utils.Utils;
 
 import java.util.List;
@@ -96,6 +97,10 @@ public class BroadcastBrick extends BrickBaseType implements BroadcastMessage {
 		}
 		view = View.inflate(context, R.layout.brick_broadcast, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_broadcast_label),
+				context.getString(R.string.category_control));
+
 		setCheckboxView(R.id.brick_broadcast_checkbox);
 
 		checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
