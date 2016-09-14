@@ -57,6 +57,7 @@ import org.catrobat.catroid.transfers.SearchScratchProgramsTask;
 import org.catrobat.catroid.ui.ScratchConverterActivity;
 import org.catrobat.catroid.ui.ScratchProgramDetailsActivity;
 import org.catrobat.catroid.ui.adapter.ScratchProgramAdapter;
+import org.catrobat.catroid.utils.DividerUtil;
 import org.catrobat.catroid.utils.ExpiringLruMemoryObjectCache;
 import org.catrobat.catroid.utils.ToastUtil;
 import org.catrobat.catroid.web.ScratchDataFetcher;
@@ -231,6 +232,7 @@ public class SearchScratchSearchProjectsListFragment extends Fragment
 			}
 		});
 		initAdapter();
+
 		return rootView;
 	}
 

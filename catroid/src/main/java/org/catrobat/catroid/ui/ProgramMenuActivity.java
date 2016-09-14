@@ -35,7 +35,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import org.catrobat.catroid.BuildConfig;
 import org.catrobat.catroid.ProjectManager;
@@ -49,8 +52,11 @@ import org.catrobat.catroid.stage.PreStageActivity;
 import org.catrobat.catroid.stage.StageActivity;
 import org.catrobat.catroid.ui.dialogs.PlaySceneDialog;
 import org.catrobat.catroid.ui.dialogs.RenameSpriteDialog;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.concurrent.locks.Lock;
+
+import uk.co.deanwild.flowtextview.models.Line;
 
 public class ProgramMenuActivity extends BaseActivity {
 
@@ -90,6 +96,8 @@ public class ProgramMenuActivity extends BaseActivity {
 			Log.e(TAG, "onCreate: NPE -> finishing", nullPointerException);
 			finish();
 		}
+
+		DividerUtil.setDivider(this, (LinearLayout) findViewById(R.id.program_menu_buttons_container));
 	}
 
 	@Override

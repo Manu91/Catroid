@@ -35,6 +35,7 @@ import org.catrobat.catroid.content.bricks.UserBrick;
 import org.catrobat.catroid.ui.controller.BackPackListManager;
 import org.catrobat.catroid.ui.fragment.AddBrickFragment;
 import org.catrobat.catroid.ui.fragment.ScriptFragment;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -196,6 +197,8 @@ public class PrototypeBrickAdapter extends BrickBaseAdapter {
 				}
 			});
 		}
+
+		DividerUtil.setDivider(context, parentView);
 
 		return convertView;
 	}

@@ -62,6 +62,7 @@ import org.catrobat.catroid.ui.adapter.ScratchJobAdapter.ScratchJobEditListener;
 import org.catrobat.catroid.ui.dialogs.CustomAlertDialogBuilder;
 import org.catrobat.catroid.ui.scratchconverter.BaseInfoViewListener;
 import org.catrobat.catroid.ui.scratchconverter.JobViewListener;
+import org.catrobat.catroid.utils.DividerUtil;
 import org.catrobat.catroid.utils.ToastUtil;
 import org.catrobat.catroid.utils.Utils;
 

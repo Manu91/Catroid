@@ -38,6 +38,7 @@ import org.catrobat.catroid.content.Scene;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.BrickLayout;
 import org.catrobat.catroid.ui.adapter.BrickAdapter;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.List;
 
@@ -114,18 +115,20 @@ public abstract class BrickBaseType implements Brick {
 	}
 
 	public void doPadding() {
-		if (adapter == null) {
-			return;
+		if (!DividerUtil.isActivated()) {
+			if (adapter == null) {
+				return;
+			}
+
+			int next = adapter.getBrickList().indexOf(this) + 1;
+			boolean hasNext = next < adapter.getBrickList().size();
+			boolean nextCommentStateDifferent = hasNext && (this.isCommentedOut() != adapter.getBrickList().get(next).isCommentedOut());
+			boolean nextIsScriptbrick = hasNext && adapter.getBrickList().get(next) instanceof ScriptBrick;
+
+			int paddingLeft = isCommentedOut() ? 75 : 0;
+			int paddingBottom = nextCommentStateDifferent && !nextIsScriptbrick ? 50 : 0;
+			view.setPadding(paddingLeft, view.getPaddingTop(), 0, paddingBottom);
 		}
-
-		int next = adapter.getBrickList().indexOf(this) + 1;
-		boolean hasNext = next < adapter.getBrickList().size();
-		boolean nextCommentStateDifferent = hasNext && (this.isCommentedOut() != adapter.getBrickList().get(next).isCommentedOut());
-		boolean nextIsScriptbrick = hasNext && adapter.getBrickList().get(next) instanceof ScriptBrick;
-
-		int paddingLeft = isCommentedOut() ? 75 : 0;
-		int paddingBottom = nextCommentStateDifferent && !nextIsScriptbrick ? 50 : 0;
-		view.setPadding(paddingLeft, view.getPaddingTop(), 0, paddingBottom);
 	}
 
 	@Override

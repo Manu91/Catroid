@@ -50,6 +50,7 @@ import org.catrobat.catroid.formulaeditor.SensorHandler;
 import org.catrobat.catroid.ui.SettingsActivity;
 import org.catrobat.catroid.ui.adapter.CategoryListAdapter;
 import org.catrobat.catroid.ui.dialogs.LegoNXTSensorPortConfigDialog;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -439,6 +440,7 @@ public class FormulaEditorCategoryListFragment extends ListFragment implements D
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		DividerUtil.setDivider(getActivity(), getListView());
 		return inflater.inflate(R.layout.fragment_formula_editor_list, container, false);
 	}
 
