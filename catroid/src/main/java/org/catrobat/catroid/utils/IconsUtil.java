@@ -35,6 +35,7 @@ public final class IconsUtil {
 
     private static boolean activated = true;
     private static boolean positive = true;
+    private static boolean largeSize = true;
 
     private IconsUtil() {
     }
@@ -104,6 +105,9 @@ public final class IconsUtil {
 
             if (drawable != null) {
                 drawable.setBounds(0, 0, 64, 64);
+                if (isLargeSize()) {
+                    drawable.setBounds(0, 0, 128, 128);
+                }
                 textView.setCompoundDrawables(null, drawable, null, null);
             }
         }
@@ -173,6 +177,9 @@ public final class IconsUtil {
 
             if (drawable != null) {
                 drawable.setBounds(-20, 0, 96, 96);
+                if (isLargeSize()) {
+                    drawable.setBounds(-20, 0, 256, 256);
+                }
                 textView.setCompoundDrawables(drawable, null, null, null);
             }
         }
@@ -206,6 +213,14 @@ public final class IconsUtil {
 
     public static void setPositive(boolean positive_) {
         positive = positive_;
+    }
+
+    public static boolean isLargeSize() {
+        return largeSize;
+    }
+
+    public static void setLargeSize(boolean largeSize_) {
+        largeSize = largeSize_;
     }
 }
 

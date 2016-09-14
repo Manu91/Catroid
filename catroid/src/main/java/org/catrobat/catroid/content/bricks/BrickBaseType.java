@@ -116,11 +116,7 @@ public abstract class BrickBaseType implements Brick {
 	}
 
 	public void doPadding() {
-		if (!DividerUtil.isActivated()) {
-			if (adapter == null) {
-				return;
-			}
-		if (!IconsUtil.isActivated()) {
+		if (!DividerUtil.isActivated() || !IconsUtil.isActivated()) {
 			if (adapter == null) {
 				return;
 			}
