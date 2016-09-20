@@ -66,6 +66,7 @@ import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog.NewUserListDialogListener;
 import org.catrobat.catroid.ui.dialogs.RenameVariableDialog;
+import org.catrobat.catroid.utils.DividerUtil;
 import org.catrobat.catroid.utils.UtilUi;
 
 public class FormulaEditorDataFragment extends ListFragment implements Dialog.OnKeyListener,
@@ -106,6 +107,7 @@ public class FormulaEditorDataFragment extends ListFragment implements Dialog.On
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		DividerUtil.setDivider(getActivity(), getListView());
 		return inflater.inflate(R.layout.fragment_formula_editor_data_list, container, false);
 	}
 

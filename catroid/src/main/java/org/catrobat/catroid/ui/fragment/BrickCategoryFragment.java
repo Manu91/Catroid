@@ -40,6 +40,7 @@ import org.catrobat.catroid.ui.SettingsActivity;
 import org.catrobat.catroid.ui.ViewSwitchLock;
 import org.catrobat.catroid.ui.adapter.BrickAdapter;
 import org.catrobat.catroid.ui.adapter.BrickCategoryAdapter;
+import org.catrobat.catroid.utils.DividerUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +98,7 @@ public class BrickCategoryFragment extends ListFragment {
 				}
 			}
 		});
+		DividerUtil.setDivider(getActivity(), getListView());
 	}
 
 	@Override

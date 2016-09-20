@@ -117,6 +117,9 @@ public abstract class BrickBaseType implements Brick {
 		if (adapter == null) {
 			return;
 		}
+		if (view == null) {
+			return;
+		}
 
 		int next = adapter.getBrickList().indexOf(this) + 1;
 		boolean hasNext = next < adapter.getBrickList().size();

@@ -80,6 +80,7 @@ import org.catrobat.catroid.ui.dialogs.DeleteLookDialog;
 import org.catrobat.catroid.ui.dialogs.NewLookDialog;
 import org.catrobat.catroid.ui.dialogs.RenameLookDialog;
 import org.catrobat.catroid.ui.dynamiclistview.DynamicListView;
+import org.catrobat.catroid.utils.DividerUtil;
 import org.catrobat.catroid.utils.ToastUtil;
 import org.catrobat.catroid.utils.UtilCamera;
 import org.catrobat.catroid.utils.UtilUi;
@@ -339,6 +340,8 @@ public class LookFragment extends ScriptActivityFragment implements LookBaseAdap
 		Utils.loadProjectIfNeeded(activity);
 
 		BackPackListManager.getInstance().setCurrentLookAdapter(adapter);
+
+		DividerUtil.setDivider(getActivity(), listView);
 	}
 
 	@Override
