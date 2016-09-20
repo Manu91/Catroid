@@ -45,6 +45,7 @@ import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.formulaeditor.FormulaElement;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
 import org.catrobat.catroid.ui.fragment.SingleSeekbar;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -152,6 +153,10 @@ public class PhiroMotorMoveForwardBrick extends FormulaBrick {
 
 		view = View.inflate(context, R.layout.brick_phiro_motor_forward, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_phiro_motor_forward_action_label),
+				context.getString(R.string.category_phiro));
+
 		setCheckboxView(R.id.brick_phiro_motor_forward_action_checkbox);
 
 		final Brick brickInstance = this;

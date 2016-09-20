@@ -40,6 +40,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import org.catrobat.catroid.R;
 import org.catrobat.catroid.common.BrickValues;
 import org.catrobat.catroid.content.Sprite;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -79,6 +80,10 @@ public class StopScriptBrick extends BrickBaseType {
 
 		view = View.inflate(context, R.layout.brick_stop_script, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_stop_script_label),
+				context.getString(R.string.category_control));
+
 		setCheckboxView(R.id.brick_stop_script_checkbox);
 
 		final Brick brickInstance = this;

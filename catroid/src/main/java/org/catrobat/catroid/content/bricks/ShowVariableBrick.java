@@ -48,6 +48,7 @@ import org.catrobat.catroid.ui.adapter.DataAdapter;
 import org.catrobat.catroid.ui.adapter.UserVariableAdapterWrapper;
 import org.catrobat.catroid.ui.dialogs.NewDataDialog;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 import org.catrobat.catroid.utils.Utils;
 
 import java.util.List;
@@ -113,6 +114,9 @@ public class ShowVariableBrick extends UserVariableBrick {
 		view = getViewWithAlpha(alphaValue);
 
 		setCheckboxView(R.id.brick_show_variable_checkbox);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_show_variable_label),
+				context.getString(R.string.category_motion));
 
 		final Brick brickInstance = this;
 		checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

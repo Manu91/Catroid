@@ -28,6 +28,8 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.catrobat.catroid.utils.IconsUtil;
+
 import java.util.List;
 
 public class BrickCategoryAdapter extends BaseAdapter {
@@ -56,6 +58,11 @@ public class BrickCategoryAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		LinearLayout layout = (LinearLayout) (categories.get(position));
+		TextView textView = (TextView) layout.getChildAt(0);
+
+		IconsUtil.addIconCategory(parent.getContext(), textView, textView.getText().toString());
+
 		return categories.get(position);
 	}
 }

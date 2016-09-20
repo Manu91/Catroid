@@ -127,7 +127,7 @@ public class AddBrickFragment extends ListFragment implements DeleteModeListener
 		String selectedCategory = getArguments().getString(BUNDLE_ARGUMENTS_SELECTED_CATEGORY);
 
 		List<Brick> brickList = categoryBricksFactory.getBricks(selectedCategory, sprite, context);
-		adapter = new PrototypeBrickAdapter(context, scriptFragment, this, brickList);
+		adapter = new PrototypeBrickAdapter(context, scriptFragment, this, brickList, selectedCategory);
 		adapter.setOnBrickCheckedListener(this);
 		setListAdapter(adapter);
 

@@ -45,6 +45,7 @@ import org.catrobat.catroid.R;
 import org.catrobat.catroid.common.BrickValues;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.ui.controller.BackPackSpriteController;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,6 +92,9 @@ public class GoToBrick extends BrickBaseType {
 
 		view = View.inflate(context, R.layout.brick_go_to, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_go_to_label),
+				context.getString(R.string.category_motion));
 
 		this.touchPositionLabel = context.getString(R.string.brick_go_to_touch_position);
 		this.randomPositionLabel = context.getString(R.string.brick_go_to_random_position);

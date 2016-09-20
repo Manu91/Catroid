@@ -54,6 +54,7 @@ import org.catrobat.catroid.ui.ScriptActivity;
 import org.catrobat.catroid.ui.controller.BackPackSpriteController;
 import org.catrobat.catroid.ui.dialogs.CustomAlertDialogBuilder;
 import org.catrobat.catroid.ui.dialogs.NewSpriteDialog;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,9 @@ public class PointToBrick extends BrickBaseType {
 
 		view = View.inflate(context, R.layout.brick_point_to, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(R.id.brick_point_to_label),
+				context.getString(R.string.category_motion));
 
 		setCheckboxView(R.id.brick_point_to_checkbox);
 

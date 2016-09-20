@@ -39,6 +39,7 @@ import org.catrobat.catroid.content.Scene;
 import org.catrobat.catroid.content.Sprite;
 import org.catrobat.catroid.formulaeditor.Formula;
 import org.catrobat.catroid.ui.fragment.FormulaEditorFragment;
+import org.catrobat.catroid.utils.IconsUtil;
 
 import java.util.List;
 
@@ -75,6 +76,9 @@ public class ThinkBubbleBrick extends FormulaBrick implements OnClickListener {
 
 		view = View.inflate(context, layoutId, null);
 		view = getViewWithAlpha(alphaValue);
+
+		IconsUtil.addIcon(context, (TextView) view.findViewById(prototypeTextViewId),
+				context.getString(R.string.category_pen));
 
 		setCheckboxView(checkboxId);
 
