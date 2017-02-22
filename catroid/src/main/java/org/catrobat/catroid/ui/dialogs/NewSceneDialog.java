@@ -119,7 +119,7 @@ public class NewSceneDialog extends DialogFragment {
 						handleOkButtonClick();
 					}
 				});
-				TextSizeUtil.enlargeViewGroup((ViewGroup) newSceneDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) newSceneDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

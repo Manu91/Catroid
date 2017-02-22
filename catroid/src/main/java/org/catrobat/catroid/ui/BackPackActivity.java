@@ -101,7 +101,7 @@ public class BackPackActivity extends BaseActivity {
 			String title = getApplicationContext().getString(R.string.backpack_title);
 			actionBar.setTitle(Html.fromHtml("<font color='#00475E'>" + title + "</font>")); //4D7F8F
 		}
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 	}
 
 	@Override
@@ -260,7 +260,7 @@ public class BackPackActivity extends BaseActivity {
 		actionModeEmptyDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 	}

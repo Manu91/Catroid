@@ -128,7 +128,7 @@ public class MergeNameDialog extends DialogFragment {
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) newProjectDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) newProjectDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		return newProjectDialog;

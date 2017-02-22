@@ -97,7 +97,7 @@ public class ProgramMenuActivity extends BaseActivity {
 			Log.e(TAG, "onCreate: NPE -> finishing", nullPointerException);
 			finish();
 		}
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 		DividerUtil.setDivider(this, (LinearLayout) findViewById(R.id.program_menu_buttons_container));
 	}
 

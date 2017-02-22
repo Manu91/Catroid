@@ -1031,7 +1031,7 @@ public class SpritesListFragment extends Fragment implements SpriteAdapter.OnSpr
 		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialogInterface) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 
@@ -1060,7 +1060,7 @@ public class SpritesListFragment extends Fragment implements SpriteAdapter.OnSpr
 		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialogInterface) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

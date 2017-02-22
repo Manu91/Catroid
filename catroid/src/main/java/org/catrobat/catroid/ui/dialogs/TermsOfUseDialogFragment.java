@@ -130,7 +130,7 @@ public class TermsOfUseDialogFragment extends DialogFragment {
 					Log.e(DIALOG_FRAGMENT_TAG, "onShow() Activity was null!");
 					return;
 				}
-				TextSizeUtil.enlargeViewGroup((ViewGroup) termsOfUseDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) termsOfUseDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

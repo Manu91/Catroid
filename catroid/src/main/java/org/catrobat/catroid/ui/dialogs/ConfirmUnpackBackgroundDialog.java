@@ -99,7 +99,7 @@ public class ConfirmUnpackBackgroundDialog extends DialogFragment {
 						handleOkButtonClick();
 					}
 				});
-				TextSizeUtil.enlargeViewGroup((ViewGroup) confirmUnpackBackgroundDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) confirmUnpackBackgroundDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

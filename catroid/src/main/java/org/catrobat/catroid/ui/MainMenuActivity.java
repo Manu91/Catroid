@@ -153,7 +153,7 @@ public class MainMenuActivity extends BaseActivity implements OnLoadProjectCompl
 				loadProgramFromExternalSource(loadExternalProjectUri);
 			}
 		}
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 		DividerUtil.setDivider(this, (LinearLayout) findViewById(R.id.main_menu_buttons_container));
 	}
 

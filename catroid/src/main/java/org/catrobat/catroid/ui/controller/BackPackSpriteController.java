@@ -97,7 +97,7 @@ public final class BackPackSpriteController {
 		dialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialogInterface) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		dialog.show();

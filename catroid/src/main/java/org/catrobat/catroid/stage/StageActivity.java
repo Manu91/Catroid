@@ -219,7 +219,7 @@ public class StageActivity extends AndroidApplication {
 		stageDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) stageDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) stageDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 	}

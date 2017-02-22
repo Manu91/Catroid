@@ -63,7 +63,7 @@ public class MyProjectsActivity extends BaseActivity {
 		loadFragment(ProjectListFragment.class, false);
 		projectListFragment = (ProjectListFragment) getFragmentManager().findFragmentById(R.id.fragment_container);
 		SnackBarUtil.showHintSnackBar(this, R.string.hint_merge);
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 	}
 
 	public void loadFragment(Class<? extends Fragment> fragmentClass, boolean addCurrentFragmentToBackStack) {

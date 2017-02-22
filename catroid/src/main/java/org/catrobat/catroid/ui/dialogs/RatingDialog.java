@@ -84,7 +84,7 @@ public class RatingDialog extends DialogFragment {
 					return;
 				}
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) rateUsDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) rateUsDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

@@ -133,7 +133,7 @@ public class SignInDialog extends DialogFragment implements
 					Log.e(DIALOG_FRAGMENT_TAG, "onShow() Activity was null!");
 					return;
 				}
-				TextSizeUtil.enlargeViewGroup((ViewGroup) signInDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) signInDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

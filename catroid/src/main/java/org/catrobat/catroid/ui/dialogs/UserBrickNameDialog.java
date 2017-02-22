@@ -124,7 +124,7 @@ public class UserBrickNameDialog extends DialogFragment {
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) newUserBrickDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) newUserBrickDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

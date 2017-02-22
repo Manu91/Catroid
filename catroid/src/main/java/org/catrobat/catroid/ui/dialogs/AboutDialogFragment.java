@@ -83,7 +83,7 @@ public class AboutDialogFragment extends DialogFragment {
 					return;
 				}
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) aboutDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) aboutDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

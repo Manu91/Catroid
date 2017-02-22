@@ -47,7 +47,7 @@ public class TemplatesActivity extends CreateAtSchoolBaseActivity {
 			setReturnToTemplatesList(true);
 		}
 
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 	}
 
 	@Override

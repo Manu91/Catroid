@@ -104,7 +104,7 @@ public abstract class TextDialog extends DialogFragment {
 			}
 		});
 
-		TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 
 		return alertDialog;
 	}

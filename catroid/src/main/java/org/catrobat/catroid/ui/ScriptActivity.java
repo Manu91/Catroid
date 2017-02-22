@@ -175,7 +175,7 @@ public class ScriptActivity extends BaseActivity {
 			switchToScriptFragment = false;
 		}
 
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 	}
 
 	private void setupBottomBar() {
@@ -477,7 +477,7 @@ public class ScriptActivity extends BaseActivity {
 			alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 				@Override
 				public void onShow(DialogInterface dialog) {
-					TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+					TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 				}
 			});
 			alertDialog.show();
@@ -914,7 +914,7 @@ public class ScriptActivity extends BaseActivity {
 		actionModeEmptyDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 	}

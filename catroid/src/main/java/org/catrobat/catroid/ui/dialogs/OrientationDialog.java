@@ -100,7 +100,7 @@ public class OrientationDialog extends DialogFragment implements LoadProjectTask
 						handleOkButtonClick();
 					}
 				});
-				TextSizeUtil.enlargeViewGroup((ViewGroup) orientationDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) orientationDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		landscapeMode = (RadioButton) dialogView.findViewById(R.id.landscape_mode);

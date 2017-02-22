@@ -89,7 +89,7 @@ public class UploadProjectTagsDialog extends DialogFragment implements GetTagsTa
 		tagDialog.setOnShowListener(new OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) tagDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) tagDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

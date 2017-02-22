@@ -80,7 +80,7 @@ public class NewSoundDialog extends DialogFragment {
 					Log.e(TAG, "onShow() Activity was null!");
 					return;
 				}
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		return dialog;

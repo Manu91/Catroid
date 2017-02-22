@@ -91,7 +91,7 @@ public class OAuthUsernameDialog extends DialogFragment implements CheckUserName
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) chooseUsernameDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) chooseUsernameDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

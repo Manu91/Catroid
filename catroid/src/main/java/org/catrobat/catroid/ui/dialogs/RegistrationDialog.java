@@ -111,7 +111,7 @@ public class RegistrationDialog extends DialogFragment implements OnRegistration
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) registrationDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) registrationDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

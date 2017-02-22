@@ -87,7 +87,7 @@ public class LegoNXTSensorConfigInfoDialog extends DialogFragment {
 					return;
 				}
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

@@ -164,7 +164,7 @@ public class MergeSceneDialog extends DialogFragment {
 						handleOkButtonClick();
 					}
 				});
-				TextSizeUtil.enlargeViewGroup((ViewGroup) mergeSceneDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) mergeSceneDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		return mergeSceneDialog;

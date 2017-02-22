@@ -117,7 +117,7 @@ public class LogInDialog extends DialogFragment implements LoginTask.OnLoginComp
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) loginDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) loginDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

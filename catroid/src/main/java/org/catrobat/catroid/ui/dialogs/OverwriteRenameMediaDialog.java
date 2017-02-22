@@ -168,7 +168,7 @@ public class OverwriteRenameMediaDialog extends DialogFragment implements OnClic
 					}
 				});
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

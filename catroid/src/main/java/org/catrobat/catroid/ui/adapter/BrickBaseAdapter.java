@@ -117,7 +117,7 @@ public abstract class BrickBaseAdapter extends BaseAdapter {
 		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 
@@ -150,7 +150,7 @@ public abstract class BrickBaseAdapter extends BaseAdapter {
 		alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialogInterface) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 		alertDialog.show();

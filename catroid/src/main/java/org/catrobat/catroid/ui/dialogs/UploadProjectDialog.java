@@ -106,7 +106,7 @@ public class UploadProjectDialog extends DialogFragment {
 						Context.INPUT_METHOD_SERVICE);
 				inputManager.showSoftInput(projectUploadName, InputMethodManager.SHOW_IMPLICIT);
 
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

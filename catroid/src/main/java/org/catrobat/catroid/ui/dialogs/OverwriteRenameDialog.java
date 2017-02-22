@@ -119,7 +119,7 @@ public class OverwriteRenameDialog extends DialogFragment implements OnClickList
 						handleOkButton();
 					}
 				});
-				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) dialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 

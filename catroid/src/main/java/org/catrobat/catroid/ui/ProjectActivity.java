@@ -141,7 +141,7 @@ public class ProjectActivity extends BaseActivity {
 
 		showLegoInfoFragmentIfNeeded(this.getFragmentManager());
 
-		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().getDecorView().getRootView());
+		TextSizeUtil.enlargeViewGroup((ViewGroup) getWindow().peekDecorView().getRootView());
 	}
 
 	@Override
@@ -358,7 +358,7 @@ public class ProjectActivity extends BaseActivity {
 			alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 				@Override
 				public void onShow(DialogInterface dialog) {
-					TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().getDecorView().getRootView());
+					TextSizeUtil.enlargeViewGroup((ViewGroup) alertDialog.getWindow().peekDecorView().getRootView());
 				}
 			});
 			alertDialog.show();
@@ -533,7 +533,7 @@ public class ProjectActivity extends BaseActivity {
 		actionModeEmptyDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 			@Override
 			public void onShow(DialogInterface dialog) {
-				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().getDecorView().getRootView());
+				TextSizeUtil.enlargeViewGroup((ViewGroup) actionModeEmptyDialog.getWindow().peekDecorView().getRootView());
 			}
 		});
 	}
